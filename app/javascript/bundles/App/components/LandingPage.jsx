@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ReactOnRails from 'react-on-rails';
+import ReactOnRails from 'react-on-rails'
 
 export default class LandingPage extends Component {
   state = {
@@ -9,9 +9,10 @@ export default class LandingPage extends Component {
     const { skip } = this.state
     this.setState({
       skip: skip + 1
-      login:
     })
   }
+
+
   render() {
     const { skip } = this.state
 
@@ -19,22 +20,30 @@ export default class LandingPage extends Component {
       case 1:
         return (
           <div>
-            <img src="/images/Welcome_Screen_1.png" alt="welcome screen" />
+            <img src="/images/Welcome_Screen_1.png" alt="welcome screen 1" />
+              <button>
+                <a href="/users/sign_in">Skip</a>
+              </button>
             <button onClick={this.skipLandingPage}>Next</button>
           </div>
         )
       case 2:
         return (
           <div>
-            <p>pic2</p>
+            <img src="/images/Welcome_Screen_2.png" alt="welcome screen 2" />
+              <button>
+                <a href="/users/sign_in">Skip</a>
+              </button>
             <button onClick={this.skipLandingPage}> Next</button>
           </div>
         )
       case 3:
         return (
           <div>
-            <p>loggin</p>
-            <button onClick={}><a>Let's Get Started!</a></button>
+            <img src="/images/Welcome_Screen_3.png" alt="welcome screen 3" />
+            <button>
+              <a href="/users/sign_in">Login</a>
+            </button>
           </div>
         )
     }
