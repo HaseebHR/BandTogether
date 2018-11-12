@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  root "profile#index"
+  root "profiles#index"
   devise_for :users,
     controllers: {
         omniauth_callbacks: 'users/omniauth_callbacks'
       }
-  resources :profile, only: [:index, :new]
+  resources :profiles, only: [:index, :new]
 
 end
