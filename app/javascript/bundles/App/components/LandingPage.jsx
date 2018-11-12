@@ -5,13 +5,13 @@ export default class LandingPage extends Component {
   state = {
     skip: 1
   }
+
   skipLandingPage = () => {
     const { skip } = this.state
     this.setState({
       skip: skip + 1
     })
   }
-
 
   render() {
     const { skip } = this.state
