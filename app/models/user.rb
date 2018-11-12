@@ -7,11 +7,12 @@ class User < ApplicationRecord
   devise :omniauthable, omniauth_providers: [:spotify]
 
   def self.from_omniauth(auth)
-    where(email: auth.info.email).first_or_create! do |user|
-      user.provider = auth.provider
-      user.uid      = auth.uid
-      user.token    = auth.credentials.token
-      user.password = Devise.friendly_token[0,20] unless user.password.present?
-    end
+      if user = where(email: auth.info.email).first
+        user.update(token: auth.credentials.token)
+      else  
+        user.provider = auth.provider
+        user.uid      = auth.uid
+        user.password = Devise.friendly_token[0,20] unless user.password.present?
+      end
   end
 end
