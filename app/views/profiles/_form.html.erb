@@ -1,0 +1,29 @@
+<%= form_with(model: @profile) do |form| %>
+  <div >
+    <div>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div>
+      <%= form.label :age %>
+      <%= form.number_field :age %>
+    </div>
+    <div>
+      <%= form.label :zip %>
+      <%= form.number_field :zip %>
+    </div>
+    <div>
+      <%= form.label :min_age %>
+      <%= form.number_field :min_age %>
+    </div>
+    <div>
+      <%= form.label :max_age %>
+      <%= form.number_field :max_age %>
+    </div>
+  </div>
+
+  <div>
+    <%= form.submit nil%>
+  </div>
+<% end %>
