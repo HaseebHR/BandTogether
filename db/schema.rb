@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2018_11_09_210152) do
     t.datetime "updated_at", null: false
     t.string "provider"
     t.string "uid"
+    t.string "token"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["provider", "uid"], name: "index_users_on_provider_and_uid"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
