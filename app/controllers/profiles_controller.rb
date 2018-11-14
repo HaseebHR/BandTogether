@@ -18,7 +18,9 @@ class ProfilesController < ApplicationController
   private 
   
     def set_profile 
-      @profile = Profile.find(current_user.profile.id)
+      if current_user
+        @profile = Profile.find(current_user.profile.id)
+      end
     end 
 
     def profile_params 
