@@ -15,11 +15,13 @@ class ProfilesController < ApplicationController
     redirect_to root_path
   end
 
-  private
-
-    def set_profile
-      @profile = Profile.find(current_user.profile.id)
-    end
+  private 
+  
+    def set_profile 
+      if current_user
+        @profile = Profile.find(current_user.profile.id)
+      end
+    end 
 
     def profile_params
       params.require(:profile).permit(:age, :name, :zip, :gender, :min_age, :max_age)

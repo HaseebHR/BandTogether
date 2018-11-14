@@ -1,4 +1,9 @@
-<%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
-<%= link_to 'Account Set-UP', edit_profile_path(@profile) %>
+<% if current_user %>
+  <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+  <%= link_to 'Account Set-UP', edit_profile_path(@profile) %>
 
-<%= react_component 'App' %>
+  <%= react_component 'App' %>  
+<% else %>
+  <%= react_component 'LandingPage' %>    
+<% end %>
+

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import ReactOnRails from 'react-on-rails'
 
 export default class LandingPage extends Component {
   state = {
