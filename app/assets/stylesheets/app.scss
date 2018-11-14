@@ -1,0 +1,59 @@
+a{
+  color: inherit;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+
+body{
+  font-family: 'Lato', sans-serif;
+}
+
+.skip-main-div{
+  height: 100vh;
+  display: flex;
+  align-content: space-around;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: center;
+}
+
+.skip-images-div{
+  margin-top: 2.5em;
+  margin-bottom: 2em;
+}
+
+.skip-explain-div{
+  font-size: 1.5em;
+  font-weight: bolder;
+  line-height: 0.5;
+}
+.skip-link-div{
+  display: inline-flex;
+  justify-content: space-between;
+  margin-top: 7em;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.skip-link-div{
+  color: #3C2D7E;
+  text-align: justify;
+  font-size: 1.15em;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+#login-button{
+  color: white;
+  background: linear-gradient(to right, #4b95c6 0%, #3c2d7e 78%);
+  font-size: 1.15em;
+  border-color: white;
+  border-radius: 1.5em;
+  margin-top: 7em;
+}
+
+@media only screen and (max-width: 768px) {
+}
