@@ -19,45 +19,49 @@ export default class LandingPage extends Component {
     switch (skip) {
       case 1:
         return (
-          <div class="text-justify">
-            <div>
+          <div className="skip-main-div">
+            <div className="skip-images-div">
              <img src="/images/welcome_1.png" alt="welcome screen 1" />
             </div>
-            <div>
-              <p>No move flying solo at concerts</p>
+            <div className="skip-explain-div">
+              <p>No move flying</p>
+              <p>solo at concerts</p>
             </div>
-            <div class="clearfix">
-             <a class="float-left" href="/users/sign_in">Skip</a>
-             <a class="btn btn-link float-right" onClick={this.skipLandingPage}>Next</a>
+            <div className="skip-link-div">
+             <a href="/users/sign_in">SKIP</a>
+             <a onClick={this.skipLandingPage}>NEXT</a>
             </div>
           </div>
         )
       case 2:
         return (
-          <div>
-            <div>
-             <img class="img-responsive" src="/images/welcome_2.png" alt="welcome screen 2" />
+          <div className="skip-main-div">
+            <div className="skip-images-div">
+             <img src="/images/welcome_2.png" alt="welcome screen 2" />
             </div>
-           <div>
-            <p class="text-center">Select concerts you want to attend</p>
+           <div className="skip-explain-div">
+            <p>Select concerts</p>
+            <p>you want to attend</p>
            </div>
-            <div>
-              <a href="/users/sign_in">Skip</a>
-              <a class="btn btn-link" onClick={this.skipLandingPage}> Next</a>
+            <div className="skip-link-div">
+              <a href="/users/sign_in">SKIP</a>
+              <a onClick={this.skipLandingPage}>NEXT</a>
             </div>
           </div>
         )
       case 3:
         return (
-          <div>
-           <div>
-             <img class="img-responsive" src="/images/welcome_3.png" alt="welcome screen 3" />
+          <div className="skip-main-div">
+           <div className="skip-images-div">
+             <img className="img-responsive" src="/images/welcome_3.png" alt="welcome screen 3" />
+           </div>
+           <div className="skip-explain-div">
+             <p>Get matches that</p>
+             <p>are attending</p>
+             <p>the same show</p>
            </div>
            <div>
-             <p class="text-center">Get matches that are attending the same show</p>
-           </div>
-           <div>
-             <a class="btn btn-success" href="/users/sign_in">Login</a>
+             <a id="login-button" className="btn btn-success" href="/users/sign_in">LOGIN WITH SPOTIFY</a>
            </div>
           </div>
         )
