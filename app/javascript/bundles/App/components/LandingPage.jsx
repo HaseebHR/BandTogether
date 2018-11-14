@@ -19,16 +19,16 @@ export default class LandingPage extends Component {
     switch (skip) {
       case 1:
         return (
-          <div>
+          <div class="text-justify">
             <div>
              <img src="/images/welcome_1.png" alt="welcome screen 1" />
             </div>
             <div>
               <p>No move flying solo at concerts</p>
             </div>
-            <div>
-             <a href="/users/sign_in">Skip</a>
-             <a class="btn btn-link" onClick={this.skipLandingPage}>Next</a>
+            <div class="clearfix">
+             <a class="float-left" href="/users/sign_in">Skip</a>
+             <a class="btn btn-link float-right" onClick={this.skipLandingPage}>Next</a>
             </div>
           </div>
         )
@@ -36,10 +36,10 @@ export default class LandingPage extends Component {
         return (
           <div>
             <div>
-             <img src="/images/welcome_2.png" alt="welcome screen 2" />
+             <img class="img-responsive" src="/images/welcome_2.png" alt="welcome screen 2" />
             </div>
            <div>
-            <p>Select concerts you want to attend</p>
+            <p class="text-center">Select concerts you want to attend</p>
            </div>
             <div>
               <a href="/users/sign_in">Skip</a>
@@ -51,10 +51,10 @@ export default class LandingPage extends Component {
         return (
           <div>
            <div>
-             <img src="/images/welcome_3.png" alt="welcome screen 3" />
+             <img class="img-responsive" src="/images/welcome_3.png" alt="welcome screen 3" />
            </div>
            <div>
-             <p>Get matches that are attending the same show</p>
+             <p class="text-center">Get matches that are attending the same show</p>
            </div>
            <div>
              <a class="btn btn-success" href="/users/sign_in">Login</a>
