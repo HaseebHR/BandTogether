@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   has_one :profile, dependent: :destroy
+  has_many :user_choice
+  has_many :concerts, through: :user_choice
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
