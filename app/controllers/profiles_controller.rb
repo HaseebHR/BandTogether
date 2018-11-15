@@ -12,16 +12,20 @@ class ProfilesController < ApplicationController
 
   def update
     @profile.update(profile_params)
+
+    ## TicketmasterClient.whatever, loop through each of user's bands to find or create concerts
+    @profile.zip
+
     redirect_to root_path
   end
 
-  private 
-  
-    def set_profile 
+  private
+
+    def set_profile
       if current_user
         @profile = Profile.find(current_user.profile.id)
       end
-    end 
+    end
 
     def profile_params
       params.require(:profile).permit(:age, :name, :zip, :gender, :min_age, :max_age)
