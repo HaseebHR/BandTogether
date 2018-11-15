@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_09_210152) do
+ActiveRecord::Schema.define(version: 2018_11_11_001230) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "items", force: :cascade do |t|
+    t.string "name"
+    t.string "item_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "profiles", force: :cascade do |t|
     t.string "name"
@@ -42,6 +49,34 @@ ActiveRecord::Schema.define(version: 2018_11_09_210152) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["provider", "uid"], name: "index_users_on_provider_and_uid"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "venue_items", force: :cascade do |t|
+    t.integer "venue_id"
+    t.integer "item_id"
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "venues", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.string "phone"
+    t.integer "open_time"
+    t.integer "close_time"
+    t.string "venue_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.float "rating"
+    t.string "street"
+    t.string "city"
+    t.string "state"
+    t.string "country"
+    t.string "zip"
+    t.string "ip"
+    t.float "longitude"
+    t.float "latitude"
   end
 
   add_foreign_key "profiles", "users"
