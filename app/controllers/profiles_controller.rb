@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:edit, :update, :index]
-  # skip_before_action :authenticate_user!, only: [:index]
+  skip_before_action :authenticate_user!, only: [:index]
 
   def index
 

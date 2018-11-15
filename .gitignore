@@ -16,9 +16,9 @@
 # Ignore uploaded files in development
 /storage/*
 !/storage/.keep
-
 /node_modules
 /yarn-error.log
+.env
 
 /public/assets
 .byebug_history
@@ -30,4 +30,3 @@
 /node_modules
 yarn-debug.log*
 .yarn-integrity
-.env

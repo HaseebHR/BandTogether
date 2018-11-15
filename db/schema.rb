@@ -10,16 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_11_001230) do
+ActiveRecord::Schema.define(version: 2018_11_15_160113) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "items", force: :cascade do |t|
+  create_table "bands", force: :cascade do |t|
     t.string "name"
-    t.string "item_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "concerts", force: :cascade do |t|
+    t.datetime "date"
+    t.string "location"
+    t.string "url"
+    t.bigint "band_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["band_id"], name: "index_concerts_on_band_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -33,6 +42,15 @@ ActiveRecord::Schema.define(version: 2018_11_11_001230) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "user_choices", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "concert_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["concert_id"], name: "index_user_choices_on_concert_id"
+    t.index ["user_id"], name: "index_user_choices_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,33 +69,8 @@ ActiveRecord::Schema.define(version: 2018_11_11_001230) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "venue_items", force: :cascade do |t|
-    t.integer "venue_id"
-    t.integer "item_id"
-    t.integer "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "venues", force: :cascade do |t|
-    t.string "name"
-    t.string "location"
-    t.string "phone"
-    t.integer "open_time"
-    t.integer "close_time"
-    t.string "venue_type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.float "rating"
-    t.string "street"
-    t.string "city"
-    t.string "state"
-    t.string "country"
-    t.string "zip"
-    t.string "ip"
-    t.float "longitude"
-    t.float "latitude"
-  end
-
+  add_foreign_key "concerts", "bands"
   add_foreign_key "profiles", "users"
+  add_foreign_key "user_choices", "concerts"
+  add_foreign_key "user_choices", "users"
 end
