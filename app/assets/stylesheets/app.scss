@@ -12,6 +12,8 @@ body{
   background-color: #FCFCFC;
 }
 
+////Landing Page
+
 .skip-main-div{
   height: 100vh;
   display: flex;
@@ -22,21 +24,21 @@ body{
 }
 
 .skip-images-div{
-  margin-top: 2.5em;
-  margin-bottom: 2em;
+  margin: auto;
 }
 
 .skip-explain-div{
   font-size: 1.5em;
   font-weight: bolder;
   line-height: 0.5;
+  margin-bottom: 1em;
 }
 .skip-link-div{
   display: inline-flex;
   justify-content: space-between;
-  margin-top: 7em;
   margin-left: 2em;
   margin-right: 2em;
+  margin-bottom: 3em;
 }
 
 .skip-link-div{
@@ -49,12 +51,15 @@ body{
 
 #login-button{
   color: white;
-  background: linear-gradient(to right, #4b95c6 0%, #3c2d7e 78%);
-  font-size: 1.15em;
   border-color: white;
+  background: linear-gradient(to right, #4b95c6 0%, #3c2d7e 78%);
+  padding: 1em 2em;
+  font-size: 1.15em;
   border-radius: 1.5em;
-  margin-top: 7em;
+  margin-bottom: 3em;
 }
+
+//// Forms
 
 @media only screen and (max-width: 768px) {
 }
