@@ -3,7 +3,15 @@ class ProfilesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
   
   def index
-    @events ||= find_events
+    respond_to do |format|
+      format.html
+      format.json do
+        @events = current_user.bands.first.concerts
+      render json: {
+        events: @events
+      }
+      end
+    end
   end
 
   def edit
@@ -12,7 +20,7 @@ class ProfilesController < ApplicationController
 
   def update
     @profile.update(profile_params)
-   
+    find_events   
     redirect_to root_path
   end
 
