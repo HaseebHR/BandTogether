@@ -17,7 +17,6 @@ class TicketmasterClient
     end
     
     response = JSON.parse(HTTParty.get(uri).body)
-    byebug
     if response.has_key?("_embedded") 
       response['_embedded']['events']&.each do |event|
         name = event['name'] 
