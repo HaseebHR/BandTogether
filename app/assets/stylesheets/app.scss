@@ -1,8 +1,6 @@
 a{
   color: inherit;
-}
-
-a:hover{
+} a:hover{
   text-decoration: none;
 }
 
@@ -33,15 +31,14 @@ body{
   line-height: 0.5;
   margin-bottom: 1em;
 }
+
 .skip-link-div{
   display: inline-flex;
   justify-content: space-between;
   margin-left: 2em;
   margin-right: 2em;
   margin-bottom: 3em;
-}
-
-.skip-link-div{
+}.skip-link-div{
   color: #3C2D7E;
   text-align: justify;
   font-size: 1.15em;
@@ -53,13 +50,59 @@ body{
   color: white;
   border-color: white;
   background: linear-gradient(to right, #4b95c6 0%, #3c2d7e 78%);
-  padding: 1em 2em;
+  padding: 0.5em 2em;
   font-size: 1.15em;
   border-radius: 1.5em;
   margin-bottom: 3em;
 }
 
 //// Forms
+
+
+#login-page{
+  display: block;
+  max-width: 100vh;
+  flex-direction: column;
+}
+
+.nav-login-div{
+  margin-top: 5em;
+}
+
+#login-page-button{
+  color: white;
+  border-color: white;
+  background: linear-gradient(to right, #4b95c6 0%, #3c2d7e 78%);
+  padding: 0.5em 2em;
+  font-size: 1.15em;
+  border-radius: 1.5em;
+}
+
+.login_input{
+  border: 1px #3C2D7E solid;
+}
+
+textarea:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+.uneditable-input:focus {
+  border-color: rgba(60, 45, 126, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(60, 45, 126, 0.6);
+  outline: 0 none;
+}
+
+#login-spotify-button{
+  color: #84bd00;
+  // border: 1px #3C2D7E solid;
+  // text-align: center;
+  // padding: 0.5em 2em;
+  font-size: 1.7em;
+  // border-radius: 1.5em;
+}
+
+
+
+
 
 @media only screen and (max-width: 768px) {
 }
