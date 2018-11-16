@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2018_11_16_203855) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "imgurl"
+    t.string "name"
     t.index ["band_id"], name: "index_concerts_on_band_id"
   end
 
