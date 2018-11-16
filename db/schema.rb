@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_15_160113) do
+ActiveRecord::Schema.define(version: 2018_11_15_202125) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,12 +22,13 @@ ActiveRecord::Schema.define(version: 2018_11_15_160113) do
   end
 
   create_table "concerts", force: :cascade do |t|
-    t.datetime "date"
+    t.string "date"
     t.string "location"
     t.string "url"
     t.bigint "band_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "imgurl"
     t.index ["band_id"], name: "index_concerts_on_band_id"
   end
 
@@ -35,13 +36,22 @@ ActiveRecord::Schema.define(version: 2018_11_15_160113) do
     t.string "name"
     t.string "gender"
     t.integer "age"
-    t.integer "zip"
+    t.string "city"
     t.integer "min_age"
     t.integer "max_age"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "user_bands", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "band_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["band_id"], name: "index_user_bands_on_band_id"
+    t.index ["user_id"], name: "index_user_bands_on_user_id"
   end
 
   create_table "user_choices", force: :cascade do |t|
@@ -71,6 +81,8 @@ ActiveRecord::Schema.define(version: 2018_11_15_160113) do
 
   add_foreign_key "concerts", "bands"
   add_foreign_key "profiles", "users"
+  add_foreign_key "user_bands", "bands"
+  add_foreign_key "user_bands", "users"
   add_foreign_key "user_choices", "concerts"
   add_foreign_key "user_choices", "users"
 end
