@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_15_202125) do
+ActiveRecord::Schema.define(version: 2018_11_16_203855) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,15 @@ ActiveRecord::Schema.define(version: 2018_11_15_202125) do
     t.datetime "updated_at", null: false
     t.string "imgurl"
     t.index ["band_id"], name: "index_concerts_on_band_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.bigint "liker_id"
+    t.bigint "likee_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["likee_id"], name: "index_likes_on_likee_id"
+    t.index ["liker_id"], name: "index_likes_on_liker_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -80,6 +89,8 @@ ActiveRecord::Schema.define(version: 2018_11_15_202125) do
   end
 
   add_foreign_key "concerts", "bands"
+  add_foreign_key "likes", "users", column: "likee_id"
+  add_foreign_key "likes", "users", column: "liker_id"
   add_foreign_key "profiles", "users"
   add_foreign_key "user_bands", "bands"
   add_foreign_key "user_bands", "users"
