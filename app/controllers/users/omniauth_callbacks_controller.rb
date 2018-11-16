@@ -5,11 +5,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
                 "https://api.spotify.com/v1/me/top/artists",
                 headers: { "Authorization" => "Bearer #{@user.token}"}
               )
-    JSON.parse(response.body)["items"].map{|item| item["name"]}.each do |artist_name|
-      band = Band.find_or_create_by(name: artist_name)
-      ## find or create UserBand
+    bands = JSON.parse(response.body)["items"].map{|item| item["name"]}
+    bands.each do |artist_name|
+      @user.bands.find_or_create_by(name: artist_name)
     end
-
     if !@user.profile
       p = Profile.new
       p.user_id = @user.id
