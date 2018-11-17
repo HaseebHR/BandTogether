@@ -1,29 +1,41 @@
-<%= form_with(model: @profile) do |form| %>
-  <div>
-    <div>
-      <%= form.label :name %>
-      <%= form.text_field :name %>
-    </div>
+<div id="login-page" class="container-fluid">
+  <div class="form-group">
+    <div class="push-update-botton">
+      <%= form_with(model: @profile) do |form| %>
+        <div>
+          <div>
+            <%= form.label :name %>
+            <%= form.text_field :name , class: "form-control login_input" %>
+          </div>
+          
+          <div>
+            <%= form.label :age %>
+            <%= form.number_field :age, class: "form-control login_input" %>
+          </div>
+          
+          <div>
+            <%= form.label :city %>
+            <%= form.text_field :city, class: "form-control login_input" %>
+          </div>
 
-    <div>
-      <%= form.label :age %>
-      <%= form.number_field :age %>
-    </div>
-    <div>
-      <%= form.label :city %>
-      <%= form.text_field :city %>
-    </div>
-    <div>
-      <%= form.label :min_age %>
-      <%= form.number_field :min_age %>
-    </div>
-    <div>
-      <%= form.label :max_age %>
-      <%= form.number_field :max_age %>
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <%= form.label :min_age %>
+                <%= form.number_field :min_age, class: "form-control login_input" %>
+              </div>
+              <div class="col">
+                <%= form.label :max_age %>
+                <%= form.number_field :max_age, class: "form-control login_input" %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <%= form.submit nil%>
+        </div>
+      <% end %>
     </div>
   </div>
-
-  <div>
-    <%= form.submit nil%>
-  </div>
-<% end %>
+</div>

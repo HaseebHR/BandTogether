@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:edit, :update, :index]
   skip_before_action :authenticate_user!, only: [:index]
-  
+
   def index
     respond_to do |format|
       format.html
@@ -25,10 +25,11 @@ class ProfilesController < ApplicationController
   end
 
   private
-
+  
   def set_profile
     @profile = Profile.find(current_user.profile.id) if current_user
   end
+  
   def find_events
     @profile&.user&.bands&.each do |band|
       TicketmasterClient.new(@profile.city, band, @profile.user).get_events
