@@ -23,7 +23,7 @@ export default class LandingPage extends Component {
              <img src="/images/welcome_1_318x328 .gif" alt="welcome screen 1" />
             </div>
             <div className="skip-explain-div">
-              <p>No move flying</p>
+              <p>No more flying</p>
               <p>solo at concerts</p>
             </div>
             <div className="skip-link-div">
