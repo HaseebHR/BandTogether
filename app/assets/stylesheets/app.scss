@@ -1,16 +1,37 @@
+/////Global Style
+
 a{
   color: inherit;
 } a:hover{
   text-decoration: none;
 }
 
-
 body{
   font-family: 'Lato', sans-serif;
   background-color: #FCFCFC;
 }
 
-////Landing Page
+textarea:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+.uneditable-input:focus {
+  border-color: rgba(60, 45, 126, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(60, 45, 126, 0.6);
+  outline: 0 none;
+}
+
+input[type=submit]{
+  color: white;
+  border-color: #FCFCFC;
+  background: linear-gradient(to right, #4b95c6 0%, #3c2d7e 78%);
+  padding: 0.5em 2em;
+  font-size: 1.15em;
+  border-radius: 1.5em;
+}
+
+
+
+/////Landing Page
 
 .skip-main-div{
   height: 100vh;
@@ -65,41 +86,45 @@ body{
   flex-direction: column;
 }
 
-.nav-login-div{
+.login-top-div{
   margin-top: 5em;
-}
-
-#login-page-button{
-  color: white;
-  border-color: white;
-  background: linear-gradient(to right, #4b95c6 0%, #3c2d7e 78%);
-  padding: 0.5em 2em;
-  font-size: 1.15em;
-  border-radius: 1.5em;
 }
 
 .login_input{
   border: 1px #3C2D7E solid;
 }
 
-textarea:focus,
-input[type="password"]:focus,
-input[type="email"]:focus,
-.uneditable-input:focus {
-  border-color: rgba(60, 45, 126, 0.8);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(60, 45, 126, 0.6);
-  outline: 0 none;
-}
 
 #login-spotify-button{
   color: #84bd00;
+  font-size: 1.7em;
+  // font-family: 'Lato', sans-serif;
+  // font-weight: bold;
   // border: 1px #3C2D7E solid;
   // text-align: center;
   // padding: 0.5em 2em;
-  font-size: 1.7em;
   // border-radius: 1.5em;
 }
 
+.login-links-button{
+  line-height: 1.8;
+}
+
+////Update Profile Page
+
+
+.push-update-botton{
+  height: 100vh;
+  display: flex;
+  align-content: space-around;
+  flex-direction: column;
+  align-items: stretch;
+  line-height: 2.8em;
+}
+
+.min-max-age-form{
+
+}
 
 
 
