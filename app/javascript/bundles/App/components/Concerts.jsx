@@ -19,7 +19,7 @@ export default class Concerts extends Component {
   }
   render() {
     return (
-      <div>
+      <div id="concert-page" className="container-fluid">
         <h1>Concerts You May Like!</h1>
         {
           this.state.events.map((concert, i) => {

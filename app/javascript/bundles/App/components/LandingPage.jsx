@@ -60,7 +60,7 @@ export default class LandingPage extends Component {
              <p>the same show</p>
            </div>
            <div>
-             <a id="login-button" className="btn btn-success" href="/users/sign_in">LOGIN WITH SPOTIFY</a>
+             <a id="login-button-spotify" className="btn btn-success" href="/users/sign_in">LOGIN WITH SPOTIFY</a>
            </div>
           </div>
         )
