@@ -7,7 +7,7 @@ class TicketmasterClient
   def
   def get_events
     @user.bands.each do |band| 
-      response = ApiCall.call(band.name, @city)
+      response = TickermasterApiCall.call(band.name, @city)
       # bands = Band.find_by(name: band.name)
       if response.has_key?("_embedded") 
         response['_embedded']['events'].each do |event|
@@ -23,7 +23,7 @@ class TicketmasterClient
   end
   def search_events
     output = []
-    response = ApiCall.call(@term, @city)
+    response = TickermasterApiCall.call(@term, @city)
     
     if response.has_key?("_embedded") 
       response['_embedded']['events'].each do |event|
