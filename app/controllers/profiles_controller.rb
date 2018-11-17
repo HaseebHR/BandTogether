@@ -6,11 +6,12 @@ class ProfilesController < ApplicationController
     respond_to do |format|
       format.html
       format.json do
-        @events = current_user.bands.first.concerts
-      render json: {
-        events: @events
-      }
-      end
+        @events = current_user.bands.find_concerts
+        @events = TicketmasterClient.new(@profile.city, @profile.user, params[:term]).search_events if !params[:term].nil? and params[:term] != "\"\""
+        render json: {
+          events: @events
+        }
+        end
     end
   end
 
@@ -31,9 +32,7 @@ class ProfilesController < ApplicationController
   end
   
   def find_events
-    @profile&.user&.bands&.each do |band|
-      TicketmasterClient.new(@profile.city, band, @profile.user).get_events
-    end
+      TicketmasterClient.new(@profile.city, @profile.user).get_events
   end
   
   def profile_params
