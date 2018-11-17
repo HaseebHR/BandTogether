@@ -1,4 +1,4 @@
-module TickermasterApiCall
+module TicketmasterApiCall
   class << self
     def call(band, city)
       url = "https://app.ticketmaster.com/discovery/v2/events.json?"
