@@ -33,7 +33,6 @@ export default class Concerts extends Component {
     return (
       <div id="concert-page">
         <h2>Concerts You May Like!</h2>
-      <div>
         <Search
           invalid={term.length > 0 && events.length == 0}
           term={term}
