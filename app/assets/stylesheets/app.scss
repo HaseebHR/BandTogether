@@ -45,7 +45,6 @@ input[type=submit]{
   border: 1px #3C2D7E solid;
 }
 
-
 /////Landing Page
 
 .skip-main-div{
@@ -145,8 +144,14 @@ input[type=submit]{
 ////Concert Page
 
 #concert-page{
-  font-family: 'Lato', sans-serif;
-  background-color: #FCFCFC;
+  // color: #3C2D7E;
+  margin-top: 5em;
+}
+
+#concert-img img{
+  object-fit: cover;
+  width: 170px;
+  height: 140px;
 }
 
 
