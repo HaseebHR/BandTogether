@@ -1,41 +1,43 @@
-<div id="login-page" class="container-fluid">
-  <div class="form-group">
-    <div class="push-update-botton">
-      <%= form_with(model: @profile) do |form| %>
-        <div>
+<div id="form-page" class="container-fluid">
+  <div class="form-profile-top">
+    <div class="form-group">
+      <div class="form-profile-body">
+        <%= form_with(model: @profile) do |form| %>
           <div>
-            <%= form.label :name %>
-            <%= form.text_field :name , class: "form-control login_input" %>
-          </div>
-          
-          <div>
-            <%= form.label :age %>
-            <%= form.number_field :age, class: "form-control login_input" %>
-          </div>
-          
-          <div>
-            <%= form.label :city %>
-            <%= form.text_field :city, class: "form-control login_input" %>
-          </div>
+            <div>
+              <%= form.label :name %>
+              <%= form.text_field :name , class: "form-control input_forms" %>
+            </div>
 
-          <div class="container">
-            <div class="row">
-              <div class="col">
-                <%= form.label :min_age %>
-                <%= form.number_field :min_age, class: "form-control login_input" %>
-              </div>
-              <div class="col">
-                <%= form.label :max_age %>
-                <%= form.number_field :max_age, class: "form-control login_input" %>
+            <div>
+              <%= form.label :age %>
+              <%= form.number_field :age, class: "form-control input_forms" %>
+            </div>
+
+            <div>
+              <%= form.label :city %>
+              <%= form.text_field :city, class: "form-control input_forms" %>
+            </div>
+
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <%= form.label :min_age %>
+                  <%= form.number_field :min_age, class: "form-control input_forms" %>
+                </div>
+                <div class="col">
+                  <%= form.label :max_age %>
+                  <%= form.number_field :max_age, class: "form-control input_forms" %>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div>
-          <%= form.submit nil%>
-        </div>
-      <% end %>
+          <div id="form-profile-update-button">
+            <%= form.submit nil, class: "btn btn-success"%>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
