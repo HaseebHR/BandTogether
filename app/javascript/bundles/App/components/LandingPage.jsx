@@ -55,17 +55,17 @@ export default class LandingPage extends Component {
       case 3:
         return (
           <div className="skip-main-div">
-            <div className="skip-images-div">
-              <img src="/images/welcome_3_318x256.gif" alt="welcome screen 3" />
-            </div>
-            <div className="skip-explain-div">
-              <p>Get matches that</p>
-              <p>are attending</p>
-              <p>the same show</p>
-            </div>
-            <div>
-              <a id="login-button" className="btn btn-success" href="/users/auth/spotify">LOGIN WITH SPOTIFY</a>
-            </div>
+           <div className="skip-images-div">
+             <img src="/images/welcome_3_318x256.gif" alt="welcome screen 3" />
+           </div>
+           <div className="skip-explain-div">
+             <p>Get matches that</p>
+             <p>are attending</p>
+             <p>the same show</p>
+           </div>
+           <div>
+             <a id="login-button-spotify" className="btn btn-success" href="/users/auth/spotify">LOGIN WITH SPOTIFY</a>
+           </div>
           </div>
         )
     }

@@ -31,8 +31,8 @@ export default class Concerts extends Component {
     const { term, events } = this.state
 
     return (
-      <div>
-        <h1>Concerts You May Like!</h1>
+      <div id="concert-page">
+        <h2>Concerts You May Like!</h2>
         <Search
           invalid={term.length > 0 && events.length == 0}
           term={term}
@@ -48,7 +48,7 @@ export default class Concerts extends Component {
                 url={concert.url}
                 imgUrl={concert.imgurl}
                 key={i}
-              />
+                />
             )
           })
         }
