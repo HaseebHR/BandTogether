@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Concert = props => {
+  console.log(props.name, props.chosen)
   return (
     <div className="container">
       <hr/>
@@ -10,6 +11,12 @@ const Concert = props => {
               <p>{props.name}</p>
               <p>{props.location}</p>
               <p>{props.date}</p>
+              <button
+                onClick={ (e) => { props.chooseConcert(props.id) } }
+                disabled={props.chosen}
+              >
+              { props.chosen ? "Chosen!" : "Choose me!" }
+              </button>
             </div>
           </div>
           <div className="col" >
