@@ -6,12 +6,16 @@ export default class LandingPage extends Component {
   }
 
   skipLandingPage = () => {
+    this.setState({
+      skip: 3
+    })
+  }
+  nextStep = () => {
     const { skip } = this.state
     this.setState({
       skip: skip + 1
     })
   }
-
   render() {
     const { skip } = this.state
 
@@ -20,15 +24,15 @@ export default class LandingPage extends Component {
         return (
           <div className="skip-main-div">
             <div className="skip-images-div">
-             <img src="/images/welcome_1_318x328 .gif" alt="welcome screen 1" />
+              <img src="/images/welcome_1_318x328 .gif" alt="welcome screen 1" />
             </div>
             <div className="skip-explain-div">
               <p>No more flying</p>
               <p>solo at concerts</p>
             </div>
             <div className="skip-link-div">
-             <a href="/users/sign_in">SKIP</a>
-             <a onClick={this.skipLandingPage}>NEXT</a>
+              <a onClick={this.skipLandingPage}>SKIP</a>
+              <a onClick={this.nextStep} >NEXT</a>
             </div>
           </div>
         )
@@ -36,15 +40,15 @@ export default class LandingPage extends Component {
         return (
           <div className="skip-main-div">
             <div className="skip-images-div">
-             <img src="/images/welcome_2_318x243.gif" alt="welcome screen 2" />
+              <img src="/images/welcome_2_318x243.gif" alt="welcome screen 2" />
             </div>
-           <div className="skip-explain-div">
-            <p>Select concerts</p>
-            <p>you want to attend</p>
-           </div>
+            <div className="skip-explain-div">
+              <p>Select concerts</p>
+              <p>you want to attend</p>
+            </div>
             <div className="skip-link-div">
-              <a href="/users/sign_in">SKIP</a>
-              <a onClick={this.skipLandingPage}>NEXT</a>
+              <a onClick={this.skipLandingPage}>SKIP</a>
+              <a onClick={this.nextStep} >NEXT</a>
             </div>
           </div>
         )
@@ -60,7 +64,7 @@ export default class LandingPage extends Component {
              <p>the same show</p>
            </div>
            <div>
-             <a id="login-button-spotify" className="btn btn-success" href="/users/sign_in">LOGIN WITH SPOTIFY</a>
+             <a id="login-button-spotify" className="btn btn-success" href="/users/auth/spotify">LOGIN WITH SPOTIFY</a>
            </div>
           </div>
         )
