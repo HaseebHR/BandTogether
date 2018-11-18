@@ -4,7 +4,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <Concerts />
+        <Concerts user={this.props.user} />
       </div>
     );
   }
