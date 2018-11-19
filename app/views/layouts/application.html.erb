@@ -14,13 +14,13 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="<%= root_path%>">
-        <% if user_signed_in? %>
+    <% if user_signed_in? %>
+    <nav>
+      <a href="<%= root_path%>">
                   Band Together
-        <% end %>
       </a>
     </nav>
+    <% end %>
     <%= yield %>
   </body>
 </html>
