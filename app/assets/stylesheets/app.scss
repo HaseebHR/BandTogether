@@ -1,14 +1,38 @@
 /////Global Style
 
-a{
+a {
   color: inherit;
-} a:hover{
+}
+
+a:hover {
   text-decoration: none;
 }
 
-body{
+body {
   font-family: 'Lato', sans-serif;
   background-color: #FCFCFC;
+}
+
+nav {
+  display: flex;
+  color: white;
+  font-size: 1.4em;
+  font-weight: bolder;
+  font-family: 'Lato', sans-serif;
+  background: #3C2D7E;
+  padding-left: 1em;
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+}
+
+button{
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
 
 textarea:focus,
@@ -32,7 +56,7 @@ input[type="color"]:focus,
   outline: 0 none;
 }
 
-input[type=submit]{
+input[type=submit] {
   color: white;
   border-color: #FCFCFC;
   background: linear-gradient(to right, #4b95c6 0%, #3c2d7e 78%);
@@ -41,13 +65,13 @@ input[type=submit]{
   border-radius: 1.5em;
 }
 
-.input_forms{
+.input_forms {
   border: 1px #3C2D7E solid;
 }
 
 /////Landing Page
 
-.skip-main-div{
+.skip-main-div {
   height: 100vh;
   display: flex;
   align-content: space-around;
@@ -56,24 +80,26 @@ input[type=submit]{
   text-align: center;
 }
 
-.skip-images-div{
+.skip-images-div {
   margin: auto;
 }
 
-.skip-explain-div{
+.skip-explain-div {
   font-size: 1.5em;
   font-weight: bolder;
   line-height: 0.5;
   margin-bottom: 1em;
 }
 
-.skip-link-div{
+.skip-link-div {
   display: inline-flex;
   justify-content: space-between;
   margin-left: 2em;
   margin-right: 2em;
   margin-bottom: 3em;
-}.skip-link-div{
+}
+
+.skip-link-div {
   color: #3C2D7E;
   text-align: justify;
   font-size: 1.15em;
@@ -81,7 +107,7 @@ input[type=submit]{
   cursor: pointer;
 }
 
-#login-button-spotify{
+#login-button-spotify {
   color: white;
   border-color: white;
   background: linear-gradient(to right, #4b95c6 0%, #3c2d7e 78%);
@@ -92,42 +118,35 @@ input[type=submit]{
 }
 
 //// Log in
-
-
 #login-page{
   display: block;
   max-width: 100vh;
   flex-direction: column;
 }
 
-.login-top-div{
+.login-top-div {
   margin-top: 5em;
 }
-
-
 
 #login-spotify-button{
   color: #84bd00;
   font-size: 1.7em;
 }
 
-.login-links-button{
+.login-links-button {
   line-height: 1.8;
 }
 
 ////Update Profile Page
 
-#form-page{
+#form-page {
   display: block;
   max-width: 100vh;
   flex-direction: column;
 }
 
-.form-profile-top{
-  margin-top: 5em;
-}
 
-.form-profile-body{
+.form-profile-body {
   height: 100vh;
   display: flex;
   align-content: space-around;
@@ -136,7 +155,7 @@ input[type=submit]{
   line-height: 2.8em;
 }
 
-#form-profile-update-button{
+#form-profile-update-button {
   margin-top: 2em;
   text-align: center;
 }
@@ -144,20 +163,98 @@ input[type=submit]{
 ////Concert Page
 
 #concert-page{
-  // color: #3C2D7E;
-  margin-top: 5em;
+  display: block;
+  max-width: 100vh;
+  flex-direction: column;
 }
 
-#concert-img img{
+#concert-img img {
   object-fit: cover;
   width: 170px;
   height: 140px;
+  border-radius: 5px;
 }
 
+////Nav bar
 
-
-
-
-
-@media only screen and (max-width: 768px) {
+.nav_dropdown_button {
+  display: flex;
+  margin-left: auto;
+  text-align: right;
 }
+
+#nav_dropdown_background {
+  background-color: #001fff00;
+}
+
+.dropdown-menu {
+  left: -111px;
+  text-align: right;
+  border-color: #3C2D7E;
+  background-color: rgba(255, 255, 255, 1);
+  padding-right: 1em;
+}
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.fa-plus-circle{
+  color: #2664A3;
+}
+
+.fa-minus-circle {
+  color: #C22945;
+}
+
+////match page
+
+.match-pop-top {
+  color: white;
+  background-color: #3C2D7E;
+}  
+////user like or no like
+
+.user-main-div{
+  height: 100vh;
+  display: flex;
+  align-content: space-around;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: center;
+}
+
+.user-like-div{
+  display: inline-flex;
+  justify-content: space-between;
+  margin-left: 5em;
+  margin-right: 5em;
+  margin-bottom: 3em;
+}.user-like-div{
+  text-align: justify;
+}
+
+.fa-volume-mute{
+  color: #C22945;
+}
+
+.fa-volume-up{
+  color: #2664A3;
+}
+
+////user profile
+
+.profile-main-div{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 768px) {}
+

@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :set_profile, only: [:edit, :update, :index]
+  before_action :set_profile, only: [:edit, :update, :index, :show]
   skip_before_action :authenticate_user!, only: [:index]
 
   def index
@@ -21,8 +21,8 @@ class ProfilesController < ApplicationController
 
   def update
     @profile.update(profile_params)
-    find_events
-    redirect_to root_path
+    find_events   
+    redirect_to profile_path
   end
 
   private
@@ -36,6 +36,6 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.require(:profile).permit(:age, :name, :city, :gender, :min_age, :max_age)
+    params.require(:profile).permit(:age, :name, :city, :gender, :min_age, :max_age, :phone)
   end
 end

@@ -1,4 +1,4 @@
-class TicketmasterApiCall
+class ApiCall
   def self.call(band, city)
     url = "https://app.ticketmaster.com/discovery/v2/events.json?"
     url += "apikey=#{ENV['TICKETMASTER_API_KEY']}"

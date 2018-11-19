@@ -7,7 +7,7 @@ export default class LandingPage extends Component {
 
   skipLandingPage = () => {
     this.setState({
-      skip: 3
+      skip: 4
     })
   }
   nextStep = () => {
@@ -23,6 +23,12 @@ export default class LandingPage extends Component {
       case 1:
         return (
           <div className="skip-main-div">
+              <img onClick={this.nextStep} src="/images/welcome_0.png" alt="band together logo" />
+          </div>
+        )
+      case 2:
+        return (
+          <div className="skip-main-div">
             <div className="skip-images-div">
               <img src="/images/welcome_1_318x328 .gif" alt="welcome screen 1" />
             </div>
@@ -36,7 +42,7 @@ export default class LandingPage extends Component {
             </div>
           </div>
         )
-      case 2:
+      case 3:
         return (
           <div className="skip-main-div">
             <div className="skip-images-div">
@@ -52,7 +58,7 @@ export default class LandingPage extends Component {
             </div>
           </div>
         )
-      case 3:
+      case 4:
         return (
           <div className="skip-main-div">
            <div className="skip-images-div">
