@@ -4,8 +4,8 @@ Rails.application.routes.draw do
     controllers: {
         omniauth_callbacks: 'users/omniauth_callbacks'
       }
-  resources :profiles, only: [:edit, :index, :update]
-
+  resources :profiles, only: [:show, :edit, :index, :update]
+  resources :likes, only: [:index, :create]
   resources :users, only: :none do
     resources :user_choices, only: [:create, :index]
   end

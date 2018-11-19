@@ -15,7 +15,12 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       p.save
     end
     if @user.persisted?
-      sign_in_and_redirect @user
+      sign_in @user
+      if current_user.profile.city.nil?
+        redirect_to edit_profile_path current_user.profile
+      else
+        redirect_to root_path
+      end
     else
       redirect_to new_user_registration_url
     end
