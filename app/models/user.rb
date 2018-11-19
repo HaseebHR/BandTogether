@@ -26,7 +26,7 @@ class User < ApplicationRecord
     user = where(email: auth.info.email).first_or_create do |user|
       user.provider = auth.provider
       user.uid      = auth.uid
-      usere.imgurl  = auth.&info&.image
+      user.imgurl  = auth.image
       user.password = Devise.friendly_token[0,20] unless user.password.present?
       user.save
     end

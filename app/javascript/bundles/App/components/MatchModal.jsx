@@ -5,7 +5,7 @@ import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
 const MatchModal = props => {
   return (
     <Modal isOpen={props.open} toggle={props.toggle}>
-      <ModalHeader toggle={props.toggle}>Congratulations!</ModalHeader>
+      <ModalHeader className="match-pop-top" toggle={props.toggle}>Congratulations!</ModalHeader>
       <ModalBody>
         <p> You have Matched with {props.user.name}!</p>
         <p> Send them a message to get things started! </p>

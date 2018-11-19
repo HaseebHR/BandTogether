@@ -13,6 +13,7 @@ const headers = {
 export default class Users extends Component {
   state = {
     users: [],
+    concerts: [],
     like: false,
   }
   toggleModal = () => {
@@ -21,8 +22,10 @@ export default class Users extends Component {
   fetchUsers = () => {
     axios.get('/likes.json')
       .then((response) => {
-        const users = response.data
-        this.setState({ users })
+        const users = response.data.users
+        const concerts = response.data.concerts
+        const images = response.data.images
+        this.setState({ users, concerts })
       })
   }
   handleLike = (userId) => {
@@ -50,11 +53,9 @@ export default class Users extends Component {
   render() {
     const user = this.state.users[0]
     if (user != undefined) {
-
       return (
         <div>
           <User
-            photo={this.props.user}
             user={user}
             handleLike={this.handleLike}
             handleDislike={this.handleDislike}

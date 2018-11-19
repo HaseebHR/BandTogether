@@ -1,14 +1,12 @@
 import React from 'react'
-
 const User = props => {
-
   return (
     <div>
       <div>
-        Big Picture Of a Face
+        <img src={props.image} style={{width: 320}} />
       </div>
       <h1>{props.user.name}</h1>
-      <div class="space-link-buttons">
+      <div className="space-link-buttons">
         <button
           className="btn btn-danger btn-lg"
           onClick={(e) => { props.handleDislike() }}
