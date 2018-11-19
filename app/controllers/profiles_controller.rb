@@ -21,8 +21,8 @@ class ProfilesController < ApplicationController
 
   def update
     @profile.update(profile_params)
-    find_events
-    redirect_to root_path
+    find_events   
+    redirect_to profile_path
   end
 
   private
