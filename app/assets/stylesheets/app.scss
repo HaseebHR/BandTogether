@@ -23,6 +23,16 @@ nav{
   padding-bottom: 0.5em;
 }
 
+button{
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
 textarea:focus,
 input[type="text"]:focus,
 input[type="password"]:focus,
@@ -105,7 +115,6 @@ input[type=submit]{
 
 //// Log in
 
-
 #login-page{
   display: block;
   max-width: 100vh;
@@ -115,8 +124,6 @@ input[type=submit]{
 .login-top-div{
   margin-top: 5em;
 }
-
-
 
 #login-spotify-button{
   color: #84bd00;
@@ -153,8 +160,6 @@ input[type=submit]{
 ////Concert Page
 
 #concert-page{
-  // color: #3C2D7E;
-  // margin-top: 5em;
   display: block;
   max-width: 100vh;
   flex-direction: column;
@@ -164,6 +169,7 @@ input[type=submit]{
   object-fit: cover;
   width: 170px;
   height: 140px;
+  border-radius: 5px;
 }
 
 ////Nav bar
@@ -185,15 +191,6 @@ input[type=submit]{
   background-color: rgba(255, 255, 255, 1);
   padding-right: 1em;
 }
-button{
-  background: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
-}
 .fa-plus-circle{
   color: #2664A3;
 }
@@ -202,7 +199,42 @@ button{
   color: #C22945;
 }
 
+////user like or no like
 
+.user-main-div{
+  height: 100vh;
+  display: flex;
+  align-content: space-around;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: center;
+}
+
+.user-like-div{
+  display: inline-flex;
+  justify-content: space-between;
+  margin-left: 5em;
+  margin-right: 5em;
+  margin-bottom: 3em;
+}.user-like-div{
+  text-align: justify;
+}
+
+.fa-volume-mute{
+  color: #C22945;
+}
+
+.fa-volume-up{
+  color: #2664A3;
+}
+
+////user profile
+
+.profile-main-div{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
 
 @media only screen and (max-width: 768px) {

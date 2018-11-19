@@ -3,20 +3,18 @@ import React from 'react'
 const User = props => {
 
   return (
-    <div>
+    <div className="user-main-div">
       <div>
-        Big Picture Of a Face
+        <img src={props.image} alt="face" style={{width: 350}}/>
       </div>
-      <h1>{props.user.name}</h1>
-      <div class="space-link-buttons">
+      <h2>{props.user.name}</h2>
+      <div className="user-like-div">
         <button
-          className="btn btn-danger btn-lg"
           onClick={(e) => { props.handleDislike() }}
-        >_</button>
+        ><i className="fas fa-volume-mute fa-2x"></i></button>
         <button
-          className="btn btn-success btn-lg"
           onClick={(e) => { props.handleLike(props.user.id) }}
-        >+</button>
+        ><i className="fas fa-volume-up fa-2x"></i></button>
       </div>
     </div>
   )
