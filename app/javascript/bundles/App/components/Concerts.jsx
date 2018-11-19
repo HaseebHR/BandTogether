@@ -63,11 +63,13 @@ export default class Concerts extends Component {
     return (
       <div id="concert-page">
         <h2>Concerts You May Like!</h2>
+        <div className="container-fluid">
         <Search
           invalid={term.length > 0 && events.length == 0}
           term={term}
           handleSearch={this.handleSearch}
         />
+        </div>
         {
           this.state.events.map((concert, i) => {
             console.log(concert.id)

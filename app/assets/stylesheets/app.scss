@@ -12,6 +12,7 @@ body{
 }
 
 nav{
+  display: flex;
   color: white;
   font-size: 1.4em;
   font-weight: bolder;
@@ -19,8 +20,7 @@ nav{
   background: #3C2D7E;
   padding-left: 1em;
   padding-top: 1em;
-  padding-bottom: 1em;
-
+  padding-bottom: 0.5em;
 }
 
 textarea:focus,
@@ -135,9 +135,6 @@ input[type=submit]{
   flex-direction: column;
 }
 
-.form-profile-top{
-  margin-top: 5em;
-}
 
 .form-profile-body{
   height: 100vh;
@@ -157,7 +154,10 @@ input[type=submit]{
 
 #concert-page{
   // color: #3C2D7E;
-  margin-top: 5em;
+  // margin-top: 5em;
+  display: block;
+  max-width: 100vh;
+  flex-direction: column;
 }
 
 #concert-img img{
@@ -166,7 +166,41 @@ input[type=submit]{
   height: 140px;
 }
 
+////Nav bar
 
+.nav_dropdown_button{
+  display: flex;
+  margin-left: auto;
+  text-align: right;
+}
+
+#nav_dropdown_background{
+  background-color: #001fff00;
+}
+
+.dropdown-menu{
+  left: -111px;
+  text-align: right;
+  border-color: #3C2D7E;
+  background-color: rgba(255, 255, 255, 1);
+  padding-right: 1em;
+}
+button{
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+.fa-plus-circle{
+  color: #2664A3;
+}
+
+.fa-minus-circle{
+  color: #C22945;
+}
 
 
 
