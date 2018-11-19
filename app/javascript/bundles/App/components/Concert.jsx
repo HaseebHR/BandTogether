@@ -15,7 +15,7 @@ const Concert = props => {
                 onClick={ (e) => { props.chooseConcert(props.id) } }
                 disabled={props.chosen}
               >
-              { props.chosen ? "Chosen!" : "Choose me!" }
+              { props.chosen ? <i class="fas fa-minus-circle fa-lg"></i> : <i class="fas fa-plus-circle fa-lg"></i> }
               </button>
             </div>
           </div>
