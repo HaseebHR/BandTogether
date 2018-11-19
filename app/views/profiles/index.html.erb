@@ -2,7 +2,7 @@
   <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
   <%= link_to 'Account Set-UP', edit_profile_path(@profile) %>
 
-  <%= react_component 'App', props: { user: current_user } %>
+  <%= react_component 'Users', props: { user: current_user } %>
 
 <% else %>
   <%= react_component 'LandingPage' %>
